@@ -33,3 +33,36 @@ func TestMap(t *testing.T) {
 	t.Log(strings)
 
 }
+
+// 合并
+func TestMergeMap(t *testing.T) {
+	newMap := make(map[string]interface{})
+	newMap["a"] = "sssss"
+	newMap["b"] = 123
+	t.Log(newMap)
+
+	oldMap := make(map[string]interface{})
+	oldMap["a"] = "sssss"
+	oldMap["b"] = 123
+	oldMap["c"] = "ahhahahahahhahah"
+
+	//m := mergeMap(newMap, oldMap)
+
+
+}
+
+func mergeMap(a map[interface{}]interface{}, b map[interface{}]interface{}) map[interface{}]interface{} {
+	if a == nil {
+		return b
+	}
+	if b == nil {
+		return a
+	}
+	for k, v := range a {
+		_, containsKey := b[k]
+		if !containsKey {
+			b[k] = v
+		}
+	}
+	return b
+}
