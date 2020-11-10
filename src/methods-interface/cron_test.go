@@ -2,7 +2,7 @@ package methods_interface
 
 import (
 	"fmt"
-	"github.com/robfig/cron"
+	"github.com/robfig/cron/v3"
 	"testing"
 	"time"
 )
